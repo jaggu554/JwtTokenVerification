@@ -19,6 +19,7 @@ public class JwtService {
 	
 	private final SecretKey key=Keys.hmacShaKeyFor(SECRET.getBytes());
 	
+	
 	public String generateToken(String userName) {
 		
 		return Jwts.builder().subject(userName).issuedAt(new Date()).expiration(new Date(System.currentTimeMillis()+360000))
